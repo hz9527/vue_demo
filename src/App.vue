@@ -1,23 +1,43 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <side-menu :name='curName' />
+    <div class="hz-content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
+import SideMenu from './components/menu'
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      curName: ''
+    }
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler (v) {
+        this.curName = v.name
+      }
+    }
+  },
+  components: {
+    SideMenu
+  }
 }
 </script>
 
-<style>
+<style lang='scss'>
+@import './styles/reset.scss';
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+  display: flex;
+  .hz-content {
+    flex: 1;
+    overflow: auto;
+  }
 }
 </style>

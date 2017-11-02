@@ -1,15 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import model from '@/components/model'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: HelloWorld
-    }
-  ]
-})
+var routes = [
+  {
+    path: '/',
+    name: 'model',
+    menu: '非表单使用v-model',
+    component: model
+  },
+  {
+    path: '*',
+    redirect: '/'
+  }
+]
+var router = new Router({routes})
+export {
+  routes,
+  router
+}
