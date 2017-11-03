@@ -4,6 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import {router} from './router'
 
+Vue.directive('hzPre', {
+  inserted: function (el) {
+    try {
+      window.hljs.highlightBlock(el)
+    } catch (e) {
+      console.log(e)
+    }
+  }
+})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

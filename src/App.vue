@@ -37,6 +37,7 @@ export default {
   display: flex;
   .hz-content {
     flex: 1;
+    padding: 15px;
     overflow: auto;
   }
 }
