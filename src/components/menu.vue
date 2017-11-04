@@ -26,7 +26,9 @@ export default {
   },
   methods: {
     click (e) {
-
+      if ('name' in e.target.dataset) {
+        this.$router.push({name: e.target.dataset.name})
+      }
     },
     init () {
       this.list = routes.filter(item => item.menu).map(item => {

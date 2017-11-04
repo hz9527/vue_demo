@@ -3,6 +3,9 @@
     <div class="hz-title">非表单组件使用v-model</div>
     <div class="hz-btn" @click='toggle'>更改model值</div>
     <div class="hz-btn" @click='toggleCode'>{{code ? '收起源码' : '展开源码'}}</div>
+    <div class="hz-con">
+      v-model实际除了绑定表单外也可以作为组件内使用，将model注册一个prop及事件，该属性不需要父组件来更改，子组件即可更新，但是是通过emit事件的方式更改，因此并没有违背单向数据流原则
+    </div>
     <test v-model='show' />
     <pre v-hz-pre v-show='code'>
       <code class='html'>
@@ -67,7 +70,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hz-btn {
-  margin: 10px 20px;
-}
 </style>
