@@ -4,6 +4,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   npm run build
   git checkout gh-pages
   node rebuild.js
+  rm -rf /dist
   git status
   git add .
   git commit -m "update pages"
