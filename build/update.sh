@@ -9,4 +9,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   git add .
   git commit -m "update pages"
   git push origin gh-pages
+  git checkout master
 fi
