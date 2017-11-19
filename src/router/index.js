@@ -4,6 +4,7 @@ import model from '@/pages/model'
 import delimiter from '@/pages/delimiter'
 import sync from '@/pages/sync'
 import bus from '@/pages/bus'
+import inheritAttrs from '@/pages/inheritAttr'
 
 Vue.use(Router)
 
@@ -31,6 +32,12 @@ var routes = [
     name: 'delimiter',
     menu: '自定义插入符',
     component: delimiter
+  },
+  {
+    path: '/inheritattrs',
+    name: 'inheritattrs',
+    menu: '默认属性',
+    component: inheritAttrs
   },
   {
     path: '*',
